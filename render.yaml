@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: minipay-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    rootDir: backend
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: CLIENT_URL
+        sync: false
